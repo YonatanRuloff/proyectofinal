@@ -1,0 +1,541 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
+.container {
+    max-width: 100%; /* Limita el ancho al tamaño de la pantalla */
+    margin: 0 auto; /* Centra el contenido */
+}
+
+
+/* Encabezado */
+header {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 15px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Banner de bienvenida */
+.header-title {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: #cccccc; /* Fondo gris */
+    color: #000; /* Texto negro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-title h1 {
+    font-size: 36px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.header-title p {
+    font-size: 18px;
+    margin-top: 10px;
+    font-style: italic;
+    color: #333; /* Texto secundario en gris oscuro */
+}
+
+
+/* Alineación del encabezado */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Logo */
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el logo y el texto */
+}
+.logo-img {
+    filter: brightness(0) invert(1); /* Cambia el logo a blanco */
+}
+.logo-img {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: 100px;
+    object-fit: contain; /* Muestra toda la imagen sin recortes */
+    background-color: transparent; /* Asegúrate de que no haya fondo negro añadido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+.logo-img:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Intensifica la sombra */
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: #f39c12;
+}
+
+
+/* Navegación */
+/* Botones de navegación */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links .brand-link {
+    background-color: #444;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-links .brand-link:hover {
+    background-color: #f39c12;
+    color: #000;
+}
+
+/* Íconos en el encabezado */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icons .icon {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.icons .icon:hover {
+    background-color: #f39c12;
+    color: #000;
+}
+
+
+/* Contadores */
+#like-count,
+#cart-count {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+    color: #fff;
+}
+
+/* Contenedor del carrusel */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor de las diapositivas */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Estilo para cada diapositiva */
+.slides img {
+    width: 100%; /* Asegúrate de que cada imagen ocupe todo el ancho del contenedor */
+    flex-shrink: 0; /* Evita que las imágenes se reduzcan más de lo necesario */
+    object-fit: cover; /* Ajusta las imágenes dentro del espacio disponible */
+}
+
+/* Botones de navegación */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none; /* Evita interferencias con clics fuera de los botones */
+}
+
+.carousel-controls .prev,
+.carousel-controls .next {
+    pointer-events: all;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-controls .prev:hover,
+.carousel-controls .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Productos destacados */
+/* Centrar el título de productos destacados */
+.featured-products {
+    text-align: center;
+    margin: 40px auto; /* Centra la sección y agrega un margen */
+    padding: 20px;
+}
+
+.featured-products h2 {
+    font-size: 28px; /* Aumenta el tamaño del título */
+    color: #333; /* Mantén un color visible */
+    margin-bottom: 30px; /* Espacio entre el título y los productos */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    text-align: center; /* Asegura el centrado */
+    font-weight: bold; /* Resalta el título */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Agrega un efecto visual sutil */
+    border-bottom: 2px solid #f39c12; /* Línea decorativa debajo del título */
+    display: inline-block; /* Ajusta el ancho del título al contenido */
+    padding-bottom: 10px; /* Espacio entre el texto y la línea */
+}
+
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product {
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+/* Estilo del ícono de cierre de sesión */
+.logout-icon {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+.logout-icon:hover {
+    background-color: #e74c3c;
+    color: #fff;
+    transform: scale(1.2);
+}
+
+/* Estilos para la página de registro */
+.register-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    margin: 50px auto; /* Centramos verticalmente con margen */
+}
+
+.register-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-container label {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.register-container input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.register-container input:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+.register-container button {
+    padding: 10px 15px;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.register-container button:hover {
+    background-color: #e67e22;
+}
+
+.register-container p {
+    font-size: 14px;
+    color: #666;
+}
+
+.register-container p a {
+    color: #f39c12;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-container p a:hover {
+    text-decoration: underline;
+}
+
+
+/* Galería de productos */
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; /* Permite desplazamiento horizontal si hay muchas miniaturas */
+}
+
+.thumbnail {
+    width: 80px; /* Tamaño más grande */
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.thumbnail.active {
+    border-color: #f39c12; /* Borde activo */
+}
+
+/* Imagen principal más grande */
+.main-image {
+    width: 500px; /* Incrementa el ancho */
+    height: 500px; /* Incrementa la altura */
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que la imagen completa se vea dentro del cuadro */
+}
+
+/* Título centrado */
+main h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #f39c12; /* Línea decorativa */
+    padding-bottom: 10px;
+}
+
+
+/* Diseño de la galería y descripción */
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+}
+ 
+
+.product-gallery {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.product-details h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.product-details span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+.product-details button {
+    background-color: #f39c12;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-details button:hover {
+    background-color: #e67e22;
+}
+
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el fondo opaco */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    z-index: 999; /* Detrás del modal */
+}
+
+/* Estilos de la lista de productos del carrito */
+#cartItemsList {
+    list-style: none;
+    padding: 0;
+}
+
+#cartItemsList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
